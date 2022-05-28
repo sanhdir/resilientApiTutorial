@@ -5,6 +5,11 @@ resilience4j:
     instances:
       callServiceBRetry:
         max-attempts: 5
-        wait-duration: 5s
-        #enable-exponential-backoff: true
-        #exponential-backoff-multiplier: 2
+        wait-duration: 2s
+        enable-exponential-backoff: true
+        exponential-backoff-multiplier: 2
+      callServiceCThrowingException:
+        maxAttempts: 3
+        waitDuration: 2s
+        retryExceptions:
+          - java.lang.Exception

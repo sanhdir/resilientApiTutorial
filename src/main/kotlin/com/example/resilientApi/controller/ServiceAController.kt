@@ -10,7 +10,12 @@ import org.springframework.web.bind.annotation.RestController
 @RequestMapping("/serviceA")
 class ServiceAController(private val serviceA: ServiceA) {
     @GetMapping(value = ["/callServiceB"], produces = [MediaType.APPLICATION_JSON_VALUE])
-    fun callServiceA(): String {
+    fun callServiceB(): String {
         return serviceA.callServiceB()
+    }
+
+    @GetMapping(value = ["/callServiceC"], produces = [MediaType.APPLICATION_JSON_VALUE])
+    fun callServiceC(): String {
+        return serviceA.callServiceC()
     }
 }
