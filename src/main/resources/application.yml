@@ -13,3 +13,7 @@ resilience4j:
         waitDuration: 2s
         retryExceptions:
           - java.lang.Exception
+      callServiceDPredicate:
+        maxRetryAttempts: 3
+        waitDuration: 3s
+        resultPredicate: com.example.resilientApi.predicates.ConditionalRetryPredicate
